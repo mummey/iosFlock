@@ -12,6 +12,11 @@
 //--------------------------------------------------------------
 void flockApp::setup()
 {
+	// register touch events
+	ofRegisterTouchEvents(this);
+  
+	ofBackground(127,127,127);
+
   box = new CBox(500.0, 500.0, 500.0);
   
   for (int i = 0; i < MAX_BOIDS; i++) 
@@ -63,8 +68,9 @@ void flockApp::setup()
   
   Flocks[4]->AddTo(Boids[29]);
 
-  mouseDownX=mouseDownY=0;
-  inMouseDrag = false;
+  downX=downY=0;
+  moveX=moveY=0;
+  dragID = -1;
 }
 
 //--------------------------------------------------------------
@@ -74,9 +80,9 @@ void flockApp::update()
     Flocks[i]->Update();
   }
   
-  if(inMouseDrag)
+  if(-1 != dragID)
     {
-      ofxVec3f screenVec(mouseX-mouseDownX,mouseY-mouseDownY,0.0);
+      ofxVec3f screenVec(moveX-downX,moveY-downY,0.0);
       screenVec.limit(ofGetHeight()/2);
       float angle = (10.0 / 60.0) * screenVec.length() / (ofGetHeight()/2);
       screenVec.normalize();
@@ -107,75 +113,42 @@ void flockApp::draw()
 }
 
 //--------------------------------------------------------------
-void flockApp::exit()
+void flockApp::touchDown(ofTouchEventArgs &touch)
 {
-  delete box;
-  
-  ofBaseApp::exit();  
+  downX = moveX = touch.x;
+  downY = moveY = touch.y;
+  dragID = touch.id;
 }
 
 //--------------------------------------------------------------
-void flockApp::keyPressed(int key)
+void flockApp::touchMoved(ofTouchEventArgs &touch)
 {
-
-  switch (key) 
-  {
-    case OF_KEY_ESC: 
-    exit();
-    break;
-    case OF_KEY_UP: 
-    wrld_rot = wrld_rot * ofxQuaternion(ofDegToRad(5.0), ofxVec3f(1.0, 0.0, 0.0));
-    break;
-    case OF_KEY_DOWN: 
-    wrld_rot = wrld_rot * ofxQuaternion(ofDegToRad(-5.0), ofxVec3f(1.0, 0.0, 0.0));
-    break;
-    case OF_KEY_LEFT: 
-    wrld_rot = wrld_rot * ofxQuaternion(ofDegToRad(5.0), ofxVec3f(0.0, 1.0, 0.0));
-    break;
-    case OF_KEY_RIGHT: 
-    wrld_rot = wrld_rot * ofxQuaternion(ofDegToRad(-5.0), ofxVec3f(0.0, 1.0, 0.0));
-    break;
-  }
-}
-
-//--------------------------------------------------------------
-void flockApp::keyReleased(int key)
-{
-
-}
-
-//--------------------------------------------------------------
-void flockApp::mouseMoved(int x, int y )
-{
-
-}
-
-//--------------------------------------------------------------
-void flockApp::mouseDragged(int x, int y, int button)
-{
-}
-
-//--------------------------------------------------------------
-void flockApp::mousePressed(int x, int y, int button)
-{
-  if(0==button)
+  if(dragID == touch.id)
     {
-      mouseDownX = x;
-      mouseDownY = y;
-      inMouseDrag = true;
+      moveX = touch.x;
+      moveY = touch.y;
+    }
+  else if(-1 == dragID)
+    {
+      downX = moveX = touch.x;
+      downY = moveY = touch.y;
+      dragID = touch.id;
     }
 }
 
 //--------------------------------------------------------------
-void flockApp::mouseReleased(int x, int y, int button)
+void flockApp::touchUp(ofTouchEventArgs &touch)
 {
-  mouseDownX=mouseDownY=0;
-  inMouseDrag = false;
+  if(dragID == touch.id)
+    {
+      downX=downY=0;
+      moveX=moveY=0;
+      dragID = -1;
+    }
 }
 
 //--------------------------------------------------------------
-void flockApp::windowResized(int w, int h)
+void flockApp::touchDoubleTap(ofTouchEventArgs &touch)
 {
   
 }
-

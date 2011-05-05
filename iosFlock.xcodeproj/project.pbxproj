@@ -25,7 +25,7 @@
 		BB0ECA6310F55E7900A35406 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0ECA6210F55E7900A35406 /* MapKit.framework */; };
 		BB16EBD20F2B2A9500518274 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD10F2B2A9500518274 /* OpenGLES.framework */; };
 		BB16EBD90F2B2AB500518274 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD80F2B2AB500518274 /* QuartzCore.framework */; };
-		BB16F3AD0F2B73B000518274 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB16F3A80F2B73B000518274 /* main.cpp */; };
+		BB16F3AD0F2B73B000518274 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB16F3A80F2B73B000518274 /* main.mm */; };
 		BB24DD8F10DA77E000E9C588 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BB24DD8C10DA77E000E9C588 /* Default.png */; };
 		BB24DD9010DA77E000E9C588 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BB24DD8D10DA77E000E9C588 /* Icon.png */; };
 		BB24DE2F10DA785000E9C588 /* libFreeImage_iphone_universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB24DDD210DA784F00E9C588 /* libFreeImage_iphone_universal.a */; };
@@ -33,10 +33,10 @@
 		BB24E23510DAA8AD00E9C588 /* libofxiPhone_iphoneos_Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB24E23410DAA8A700E9C588 /* libofxiPhone_iphoneos_Debug.a */; };
 		BBE5EAB80F49AD8400F28951 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE5EAB70F49AD8400F28951 /* AudioToolbox.framework */; };
 		C802E83F13710E8F00AECFD6 /* glu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C802E83E13710E8F00AECFD6 /* glu.a */; };
-		C802E85A1371103300AECFD6 /* CBoid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C802E8521371103300AECFD6 /* CBoid.cpp */; };
-		C802E85B1371103300AECFD6 /* CBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C802E8541371103300AECFD6 /* CBox.cpp */; };
-		C802E85C1371103300AECFD6 /* CFlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C802E8561371103300AECFD6 /* CFlock.cpp */; };
-		C802E85D1371103300AECFD6 /* flockApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C802E8581371103300AECFD6 /* flockApp.cpp */; };
+		C802E85A1371103300AECFD6 /* CBoid.mm in Sources */ = {isa = PBXBuildFile; fileRef = C802E8521371103300AECFD6 /* CBoid.mm */; };
+		C802E85B1371103300AECFD6 /* CBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = C802E8541371103300AECFD6 /* CBox.mm */; };
+		C802E85C1371103300AECFD6 /* CFlock.mm in Sources */ = {isa = PBXBuildFile; fileRef = C802E8561371103300AECFD6 /* CFlock.mm */; };
+		C802E85D1371103300AECFD6 /* flockApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = C802E8581371103300AECFD6 /* flockApp.mm */; };
 		C802E881137110BE00AECFD6 /* ofxMatrix3x3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C802E873137110BE00AECFD6 /* ofxMatrix3x3.cpp */; };
 		C802E882137110BE00AECFD6 /* ofxMatrix4x4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C802E875137110BE00AECFD6 /* ofxMatrix4x4.cpp */; };
 		C802E883137110BE00AECFD6 /* ofxQuaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C802E87A137110BE00AECFD6 /* ofxQuaternion.cpp */; };
@@ -81,7 +81,7 @@
 		BB0ECA6210F55E7900A35406 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BB16EBD10F2B2A9500518274 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BB16EBD80F2B2AB500518274 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		BB16F3A80F2B73B000518274 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BB16F3A80F2B73B000518274 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		BB24DD8C10DA77E000E9C588 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BB24DD8D10DA77E000E9C588 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ofxiphone-Info.plist"; sourceTree = "<group>"; };
@@ -136,13 +136,13 @@
 		BB24E22F10DAA8A700E9C588 /* iPhone+OF Lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "iPhone+OF Lib.xcodeproj"; path = "../../../libs/openFrameworksCompiled/project/iphone/iPhone+OF Lib.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		BBE5EAB70F49AD8400F28951 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C802E83E13710E8F00AECFD6 /* glu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = glu.a; sourceTree = "<group>"; };
-		C802E8521371103300AECFD6 /* CBoid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBoid.cpp; sourceTree = "<group>"; };
+		C802E8521371103300AECFD6 /* CBoid.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBoid.mm; sourceTree = "<group>"; };
 		C802E8531371103300AECFD6 /* CBoid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBoid.h; sourceTree = "<group>"; };
-		C802E8541371103300AECFD6 /* CBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBox.cpp; sourceTree = "<group>"; };
+		C802E8541371103300AECFD6 /* CBox.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBox.mm; sourceTree = "<group>"; };
 		C802E8551371103300AECFD6 /* CBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBox.h; sourceTree = "<group>"; };
-		C802E8561371103300AECFD6 /* CFlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CFlock.cpp; sourceTree = "<group>"; };
+		C802E8561371103300AECFD6 /* CFlock.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CFlock.mm; sourceTree = "<group>"; };
 		C802E8571371103300AECFD6 /* CFlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFlock.h; sourceTree = "<group>"; };
-		C802E8581371103300AECFD6 /* flockApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = flockApp.cpp; sourceTree = "<group>"; };
+		C802E8581371103300AECFD6 /* flockApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = flockApp.mm; sourceTree = "<group>"; };
 		C802E8591371103300AECFD6 /* flockApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flockApp.h; sourceTree = "<group>"; };
 		C802E873137110BE00AECFD6 /* ofxMatrix3x3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMatrix3x3.cpp; sourceTree = "<group>"; };
 		C802E874137110BE00AECFD6 /* ofxMatrix3x3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMatrix3x3.h; sourceTree = "<group>"; };
@@ -306,15 +306,15 @@
 		BB16F3A50F2B73B000518274 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				C802E8521371103300AECFD6 /* CBoid.cpp */,
+				C802E8521371103300AECFD6 /* CBoid.mm */,
 				C802E8531371103300AECFD6 /* CBoid.h */,
-				C802E8541371103300AECFD6 /* CBox.cpp */,
+				C802E8541371103300AECFD6 /* CBox.mm */,
 				C802E8551371103300AECFD6 /* CBox.h */,
-				C802E8561371103300AECFD6 /* CFlock.cpp */,
+				C802E8561371103300AECFD6 /* CFlock.mm */,
 				C802E8571371103300AECFD6 /* CFlock.h */,
-				C802E8581371103300AECFD6 /* flockApp.cpp */,
+				C802E8581371103300AECFD6 /* flockApp.mm */,
 				C802E8591371103300AECFD6 /* flockApp.h */,
-				BB16F3A80F2B73B000518274 /* main.cpp */,
+				BB16F3A80F2B73B000518274 /* main.mm */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -642,11 +642,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB16F3AD0F2B73B000518274 /* main.cpp in Sources */,
-				C802E85A1371103300AECFD6 /* CBoid.cpp in Sources */,
-				C802E85B1371103300AECFD6 /* CBox.cpp in Sources */,
-				C802E85C1371103300AECFD6 /* CFlock.cpp in Sources */,
-				C802E85D1371103300AECFD6 /* flockApp.cpp in Sources */,
+				BB16F3AD0F2B73B000518274 /* main.mm in Sources */,
+				C802E85A1371103300AECFD6 /* CBoid.mm in Sources */,
+				C802E85B1371103300AECFD6 /* CBox.mm in Sources */,
+				C802E85C1371103300AECFD6 /* CFlock.mm in Sources */,
+				C802E85D1371103300AECFD6 /* flockApp.mm in Sources */,
 				C802E881137110BE00AECFD6 /* ofxMatrix3x3.cpp in Sources */,
 				C802E882137110BE00AECFD6 /* ofxMatrix4x4.cpp in Sources */,
 				C802E883137110BE00AECFD6 /* ofxQuaternion.cpp in Sources */,

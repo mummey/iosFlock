@@ -1,8 +1,8 @@
-#ifndef _FLOCK_APP
-#define _FLOCK_APP
+#pragma once
 
-// Includes
 #include "ofMain.h"
+#include "ofxiPhone.h"
+#include "ofxiPhoneExtras.h"
 #include "ofxQuaternion.h"
 
 #define MAX_BOIDS                    30
@@ -13,7 +13,7 @@ class CBox;
 class CFlock;
 class CBoid;
 
-class flockApp : public ofBaseApp
+class flockApp : public ofxiPhoneApp
 {
   private:
   CBox *box;
@@ -22,8 +22,9 @@ class flockApp : public ofBaseApp
 
   ofxQuaternion wrld_rot;
   
-  int mouseDownX, mouseDownY;
-  bool inMouseDrag;
+  int downX, downY;
+  int moveX, moveY;
+  int dragID;
   public:
   
   CFlock *FlockAtIndex(int i)
@@ -39,16 +40,10 @@ class flockApp : public ofBaseApp
 		void setup();
 		void update();
 		void draw();
-    void exit();
 
-		void keyPressed  (int key);
-		void keyReleased(int key);
-		void mouseMoved(int x, int y );
-		void mouseDragged(int x, int y, int button);
-		void mousePressed(int x, int y, int button);
-		void mouseReleased(int x, int y, int button);
-		void windowResized(int w, int h);
+    void touchDown(ofTouchEventArgs &touch);
+    void touchMoved(ofTouchEventArgs &touch);
+    void touchUp(ofTouchEventArgs &touch);
+    void touchDoubleTap(ofTouchEventArgs &touch);
 
 };
-
-#endif
