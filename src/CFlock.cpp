@@ -10,11 +10,13 @@
 // includes
 //
 
+#include <OpenGLES/ES1/gl.h>
+#include <OpenGLES/ES1/glext.h>
+
 #include "CFlock.h" 
 #include "ofConstants.h"
 #include "ofGraphics.h"
 #include "ofxVectorMath.h"
-#include "ofAppGlutWindow.h"
 
 //
 // flocking debug globals

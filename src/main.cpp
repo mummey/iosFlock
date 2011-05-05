@@ -1,17 +1,10 @@
 #include "ofMain.h"
 #include "flockApp.h"
-#include "ofAppGlutWindow.h"
 
-//========================================================================
-int main( )
+
+int main(int argc, char *argv[]) 
 {
+	ofSetupOpenGL(1024,768, OF_FULLSCREEN);			// <-------- setup the GL context
 
-  ofAppGlutWindow window;
-	ofSetupOpenGL(&window, 1200,900, OF_WINDOW);			// <-------- setup the GL context
-
-	// this kicks off the running of my app
-	// can be OF_WINDOW or OF_FULLSCREEN
-	// pass in width and height too:
-	ofRunApp( new flockApp());
-
+	ofRunApp(new flockApp());
 }

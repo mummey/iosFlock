@@ -9,9 +9,11 @@
 // includes
 //
 
+#include <OpenGLES/ES1/gl.h>
+#include <OpenGLES/ES1/glext.h>
+
 #include "CBox.h"
 #include "ofGraphics.h"
-#include "ofAppGlutWindow.h"
 
 //
 // flocking debug globals
