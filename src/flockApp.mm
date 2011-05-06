@@ -15,9 +15,13 @@ void flockApp::setup()
 	// register touch events
 	ofRegisterTouchEvents(this);
   
-	ofBackground(127,127,127);
-
-  box = new CBox(500.0, 500.0, 500.0);
+	ofBackground(100,100,100);
+  
+  int width = ofGetWidth();
+  isIPAD = (width == 1024 || width == 768) ? true : false;
+  float boxSide = (isIPAD) ? 500.0 : 200.0;
+  
+  box = new CBox(boxSide, boxSide, boxSide);
   
   for (int i = 0; i < MAX_BOIDS; i++) 
   {

@@ -25,6 +25,8 @@ class flockApp : public ofxiPhoneApp
   int downX, downY;
   int moveX, moveY;
   int dragID;
+  bool isIPAD;
+  
   public:
   
   CFlock *FlockAtIndex(int i)

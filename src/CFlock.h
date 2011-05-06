@@ -13,15 +13,7 @@
 // includes
 //
 
-//#include "defaults.h"
-//#include "util.h"
-
 #include "CBoid.h"
-
-#define MAX_FLOCKS 5
-#define DEFAULT_PERCEPTION_RANGE    100.0f
-#define KEEP_AWAY_DIST              60.0f
-#define SEPARATION_DIST             30.0f
 
 //
 // class definition

@@ -42,13 +42,13 @@ CBoid * CBoid::VisibleFriendsList[] = {NULL};
 // Constructor #1.
 // Creates an individual boid with randomized position and velocity.
 
-CBoid::CBoid (int id_v, flockApp * w)
+CBoid::CBoid (int id_v, flockApp * a)
 {
 
-  wrldPtr = w;
+   appPtr = a;
   
    m_id               = id_v;
-   m_perception_range = DEFAULT_PERCEPTION_RANGE;
+   m_perception_range = CBox::WorldPtr->GetBoidPerceptionRange();
 
    // generate random position
 
@@ -102,7 +102,7 @@ CBoid::CBoid (int id_v,
 {
 
    m_id               = id_v;
-   m_perception_range = DEFAULT_PERCEPTION_RANGE;
+   m_perception_range = CBox::WorldPtr->GetBoidPerceptionRange();
 
    m_pos = *pos_v;
    m_vel = *vel_v;
@@ -300,7 +300,7 @@ ofxVec3f CBoid::FleeEnemies (void)
 
    // test:  Are we too close to our nearest enemy?
 
-   if (m_dist_to_nearest_enemy < KEEP_AWAY_DIST) {
+   if (m_dist_to_nearest_enemy < CBox::WorldPtr->GetBoidKeepAwayDistance()) {
 
       // yep...compute vector away from enemy
 
@@ -321,7 +321,7 @@ ofxVec3f CBoid::FleeEnemies (void)
 ofxVec3f CBoid::KeepDistance (void)
 {
 
-   float ratio = m_dist_to_nearest_flockmate/SEPARATION_DIST;
+   float ratio = m_dist_to_nearest_flockmate / CBox::WorldPtr->GetBoidSeparationDistance();
 
    // compute vector towards our nearest buddy
 
@@ -334,13 +334,13 @@ ofxVec3f CBoid::KeepDistance (void)
 
    // test:  are we too close to our nearest flockmate?
 
-   if (m_dist_to_nearest_flockmate < SEPARATION_DIST) {
+   if (m_dist_to_nearest_flockmate < CBox::WorldPtr->GetBoidSeparationDistance()) {
 
       // too close...move away from our neighbor
 
       change.scale (-ratio);
 
-   } else if (m_dist_to_nearest_flockmate > SEPARATION_DIST) {
+   } else if (m_dist_to_nearest_flockmate > CBox::WorldPtr->GetBoidSeparationDistance()) {
 
       // too far away...move towards our neighbor
 
@@ -406,7 +406,7 @@ int CBoid::SeeEnemies (int flock_id)
 
       // not our flock, so check it out
 
-     CFlock * flk = wrldPtr->FlockAtIndex(i);
+     CFlock * flk = appPtr->FlockAtIndex(i);
      
      if(flk)
        enemy = flk->GetFirstMember();

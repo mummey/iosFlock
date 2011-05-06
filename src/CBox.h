@@ -10,6 +10,7 @@
 
 #include "ofxVectorMath.h"
 
+
 class CBox  
 {
 
@@ -34,7 +35,7 @@ public:
    // Creates a Box with default values of 50 meters on any side 
    // not specified.
 
-	CBox (float lv=50.0, float wv=50.0, float hv=50.0);
+	 CBox (float lv=500.0, float wv=500.0, float hv=500.0);
 
    // Destructor
 
@@ -65,13 +66,21 @@ public:
 
    float GetBoxHeight (void);
 
+   float GetBoidPerceptionRange (void);
+   float GetBoidKeepAwayDistance (void);
+   float GetBoidSeparationDistance (void);
+
 private:
 
    float m_Length;
    float m_Width;
    float m_Height;
 
-  float boxVerts[24];
+   float m_perceptionRange;
+   float m_keepAwayDist;
+   float m_separationDist;
+
+   float boxVerts[24];
     
 };
 

@@ -19,15 +19,6 @@
 #include "ofxVectorMath.h"
 
 //
-// flocking debug globals
-//
-
-extern bool gDrawAxes;
-extern bool gDrawPerceptionDist;
-extern bool gDrawKeepawayDist;
-extern bool gDrawSeparationDist;
-
-//
 // static variable initialization
 //
 
@@ -206,27 +197,6 @@ void CFlock::Draw ()
          glRotatef(RAD_TO_DEG * orient->x, 1.0, 0.0, 0.0);   // pitch
 
          // test for any debug options
-
-         // draw perception distance spheres?
-
-         //if (gDrawPerceptionDist) {
-//            glColor3f (1.0f, 1.0f, 1.0f);
-//            glutWireSphere (DEFAULT_PERCEPTION_RANGE, 12, 12);
-         //}
-
-         // draw keepaway distance spheres?
-
-         //if (gDrawKeepawayDist) {
-//            glColor3f (1.0f, 0.0f, 0.0f);
-//            glutWireSphere (KEEP_AWAY_DIST, 12, 12);
-         //}
-
-         // draw separation distance spheres?
-
-         //if (gDrawSeparationDist) {
-//            glColor3f (color_r, color_g, color_b);
-//            glutWireSphere (SEPARATION_DIST, 12, 12);
-        // }
 
          // draw local (boid space) XYZ axes?
 

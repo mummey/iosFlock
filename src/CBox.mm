@@ -57,14 +57,13 @@ const GLubyte CBox::boxIndices[] = {0,1,
 CBox::CBox (float lv, float wv, float hv)
 {
 
-#ifdef BOX_DEBUG
-   myprintf("\nInside Box Contructor\n");
-   myprintf("Length = %f Width = %f Height = %f\n",lv, wv, hv);
-#endif
-
    m_Length = lv;
    m_Width  = wv;
    m_Height = hv;
+
+  m_perceptionRange = m_Width * 0.20;
+  m_keepAwayDist = m_Width * 0.12;
+  m_separationDist = m_Width * 0.06;
 
   boxVerts[0]=-m_Height/2.0,boxVerts[1]=-m_Height/2.0,boxVerts[2]=-m_Height/2.0;
   boxVerts[3]=-m_Height/2.0,boxVerts[4]=-m_Height/2.0,boxVerts[5]=m_Height/2.0;
@@ -81,10 +80,6 @@ CBox::CBox (float lv, float wv, float hv)
 
 CBox::~CBox ()
 {
-
-#ifdef BOX_DEBUG
-   myprintf("\nInside CBox Destructor\n");
-#endif
 
 }
 
@@ -108,8 +103,6 @@ void CBox::Draw ()
 
 //      if (gDrawAxes) {
 
-//      glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-//      
       glEnableClientState(GL_VERTEX_ARRAY);
       glEnableClientState(GL_COLOR_ARRAY);
 
@@ -148,3 +141,12 @@ float CBox::GetBoxWidth (void)
 
 float CBox::GetBoxHeight (void)
 { return (m_Height); }
+
+float CBox::GetBoidPerceptionRange (void)
+{ return (m_perceptionRange); }
+
+float CBox::GetBoidKeepAwayDistance (void)
+{ return (m_keepAwayDist); }
+
+float CBox::GetBoidSeparationDistance (void)
+{ return (m_separationDist); }

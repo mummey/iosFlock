@@ -15,10 +15,6 @@
 
 #include "ofxVectorMath.h"
 #include "flockApp.h"
-//#include "defaults.h"
-//#include "mtxlib.h"
-//#include "util.h"
-//#include "vector.h"
 
 #define MAX_FRIENDS_VISIBLE MAX_BOIDS/2
 
@@ -28,7 +24,7 @@
 
 class CBoid {
   private:
-  flockApp *wrldPtr;
+  flockApp *appPtr;
   
    public:
 
