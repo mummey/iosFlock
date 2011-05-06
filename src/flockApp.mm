@@ -154,5 +154,5 @@ void flockApp::touchUp(ofTouchEventArgs &touch)
 //--------------------------------------------------------------
 void flockApp::touchDoubleTap(ofTouchEventArgs &touch)
 {
-  
+  wrld_rot = ofxQuaternion();
 }
