@@ -6,8 +6,7 @@
 //           boids (flock members).
 //*********************************************************************
 
-#ifndef _CBOID_H
-#define _CBOID_H
+#pragma once
 
 //
 // includes
@@ -242,4 +241,3 @@ class CBoid {
       void ComputeRPY (void);
 };
 
-#endif

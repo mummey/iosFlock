@@ -1,5 +1,5 @@
 #include "flockApp.h"
-#include "ofAppRunner.h"
+//#include "ofAppRunner.h"
 #include "ofGraphics.h"
 #include "ofConstants.h"
 
@@ -28,17 +28,13 @@ void flockApp::setup()
     Boids[i] = new CBoid(i, this);
   }
   
-  // build some flocks for the boids to belong to
-  
   for (int j = 0; j < MAX_FLOCKS; j++) 
   {
     Flocks[j] = new CFlock();
   }
   
-  // now assign the boids to the flocks
-  
-  Flocks[0]->AddTo(Boids[0]);       // yes, I could have done this with some king
-  Flocks[0]->AddTo(Boids[1]);       // of loop, but I wanted to show unequal sized flocks
+  Flocks[0]->AddTo(Boids[0]);       
+  Flocks[0]->AddTo(Boids[1]);       
   Flocks[0]->AddTo(Boids[2]);
   Flocks[0]->AddTo(Boids[3]);
   Flocks[0]->AddTo(Boids[4]);
@@ -84,11 +80,19 @@ void flockApp::update()
     Flocks[i]->Update();
   }
   
+  // Rotation Action:
+  // There are a few compromises here that will have to be rethought later.
+  // 1. rate update() is called is guessed (30.0 fps).
+  // 2. angle per-second based on what seems reasonable for guessed rate.
+  // 3. uses touch to affect rotation speed, but there's no momentum.
+  // 
   if(-1 != dragID)
     {
       ofxVec3f screenVec(moveX-downX,moveY-downY,0.0);
-      screenVec.limit(ofGetHeight()/2);
-      float angle = (10.0 / 60.0) * screenVec.length() / (ofGetHeight()/2);
+      ofxVec3f screenSiz(ofGetWidth(),ofGetHeight(),0.0);
+    
+      screenVec.limit(screenSiz.length()/2.0);
+      float angle = (20.0 / 30.0) * screenVec.length() / (screenSiz.length()/2.0);
       screenVec.normalize();
       screenVec.set(screenVec.y,screenVec.x,0.0);
       wrld_rot = wrld_rot * ofxQuaternion(ofDegToRad(angle), screenVec);

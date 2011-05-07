@@ -5,8 +5,7 @@
 // Purpose:  Class definitions and prototypes for the CBox class.
 //*********************************************************************
 
-#ifndef _CBOX_H
-#define _CBOX_H
+#pragma once
 
 #include "ofxVectorMath.h"
 
@@ -84,4 +83,3 @@ private:
     
 };
 
-#endif

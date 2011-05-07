@@ -96,10 +96,24 @@ void CBox::Draw ()
   
       glEnableClientState(GL_VERTEX_ARRAY);
         glVertexPointer(3, GL_FLOAT, 0, boxVerts);
-        glDrawElements(GL_LINES, 24, GL_UNSIGNED_BYTE, boxIndices);
+        glDrawElements(GL_LINES, 8, GL_UNSIGNED_BYTE, boxIndices);
       glDisableClientState(GL_VERTEX_ARRAY);
   
-      // draw world XYZ axes?
+      glColor4f(0.0f, 1.0f, 0.0f, 1.0f);
+      
+      glEnableClientState(GL_VERTEX_ARRAY);
+        glVertexPointer(3, GL_FLOAT, 0, boxVerts);
+        glDrawElements(GL_LINES, 8, GL_UNSIGNED_BYTE, boxIndices+8);
+      glDisableClientState(GL_VERTEX_ARRAY);
+
+      glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
+      
+      glEnableClientState(GL_VERTEX_ARRAY);
+        glVertexPointer(3, GL_FLOAT, 0, boxVerts);
+        glDrawElements(GL_LINES, 8, GL_UNSIGNED_BYTE, boxIndices+16);
+      glDisableClientState(GL_VERTEX_ARRAY);
+
+  // draw world XYZ axes?
 
 //      if (gDrawAxes) {
 
