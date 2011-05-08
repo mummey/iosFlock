@@ -1,0 +1,5 @@
+To Do:
+
+1. Make rotation adjustments based on position instead of speed. (In other words, not using a speed determined by the offset from start of drag.)
+2. Memory warnings
+3. Pinch?
