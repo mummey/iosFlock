@@ -157,6 +157,7 @@
 		C802E87D137110BE00AECFD6 /* ofxVec3f.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxVec3f.h; sourceTree = "<group>"; };
 		C802E87E137110BE00AECFD6 /* ofxVec4f.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxVec4f.h; sourceTree = "<group>"; };
 		C802E87F137110BE00AECFD6 /* ofxVectorMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxVectorMath.h; sourceTree = "<group>"; };
+		C84758F1137614B5003966D7 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		C8EDC5D5137258FF008DBA2A /* glu-iphone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "glu-iphone.a"; sourceTree = "<group>"; };
 		DA7850361105BFB6007EFC90 /* glu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glu.h; sourceTree = "<group>"; };
 		DA7850371105BFB6007EFC90 /* gluos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gluos.h; sourceTree = "<group>"; };
@@ -208,6 +209,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				C84758F1137614B5003966D7 /* README */,
 				BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */,
 				BB16F3A50F2B73B000518274 /* src */,
 				BB24DD8B10DA77E000E9C588 /* data */,
